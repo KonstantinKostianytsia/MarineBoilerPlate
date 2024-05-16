@@ -22,25 +22,25 @@ function App(): React.JSX.Element {
         setCurrentIPAddress(value);
       }
     });
-    const server = UdpSocketLib.createSocket({type: 'udp4', debug: true});
+    // const server = UdpSocketLib.createSocket({type: 'udp4', debug: true});
 
-    server.on('message', (data, rinfo) => {
-      const receivedMessage = data.toString() as string;
-      console.log('Received message', receivedMessage);
-      setReceivedMessages([...receivedMessages, receivedMessage]);
-    });
+    // server.on('message', (data, rinfo) => {
+    //   const receivedMessage = data.toString() as string;
+    //   console.log('Received message', receivedMessage);
+    //   setReceivedMessages([...receivedMessages, receivedMessage]);
+    // });
 
-    server.on('connection', arg => {
-      console.log(arg);
-      console.log('SOmeone connected');
-    });
-    server.bind(8888);
+    // server.on('connection', arg => {
+    //   console.log(arg);
+    //   console.log('SOmeone connected');
+    // });
+    // server.bind(8888);
 
-    setSocket(server);
+    // setSocket(server);
 
-    return () => {
-      socket && socket.close();
-    };
+    // return () => {
+    //   socket && socket.close();
+    // };
   }, []);
 
   const sendMessage = () => {
